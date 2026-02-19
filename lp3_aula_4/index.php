@@ -17,16 +17,13 @@
     <li>Numero: <?php echo "$i "; }?></li>
 
     <h4>Q2</h4>
-    <?php 
+   <?php 
     $soma = 0;
-    for($x = 1; $x < 500; $x +=3){
-        if($x %  3 == 0 && $x % 2 == 1){
-            $soma += $x;
-            
-        }
-    }
-    echo "A soma de todos os numeros impares e multiplos de 3 entre 1 e 500 é $soma";
-?> 
+    for($k = 1; $k < 501; $k++){
+        if($k % 2 != 0 & $k % 3 ==0){
+            $soma += $k; }
+}   echo "A soma dos números ímpares múltiplos de três, de 1 até 500: $soma <br>"; 
+?>
 
     <h4>Q3</h4>
     <?php
