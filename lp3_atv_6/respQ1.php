@@ -4,35 +4,35 @@ $nome = $_POST['nome'];
 $email = $_POST['email'];
 $tipo = $_POST['tipoParticipante'];
 $tamanho = $_POST['tamanho'];
-$area = $_POST['areas'] ?? [];
+$area = $_POST['areas'];
 
 $lista = "";
 
 if ($tamanho == "pyt") {
-    $tamanho = "P<br>";
+    $tamanho = "Python<br>";
 }
 if ($tamanho == "jav") {
-    $tamanho = "M<br>";
+    $tamanho = "Java<br>";
 }
 if ($tamanho == "php") {
-    $tamanho = "G<br>";
+    $tamanho = "PHP<br>";
 }
 if ($tamanho == "c++") {
-    $tamanho = "GG<br>";
+    $tamanho = "C++<br>";
 }
 
-foreach ($work as $item) {
+foreach ($area as $item) {
     if ($item == "lavarel") {
-        $lista .= "lavarel";
+        $lista .= "Desenvolvimento Web <br>";
     }
     if ($item == "bootstrap") {
-        $lista .= "bootstrap";
+        $lista .= "Inteligência Artificial <br>";
     }
     if ($item == "js") {
-        $lista .= "js";
+        $lista .= "Banco de Dados <br>";
     }
     if ($item == "historia") {
-        $lista .= "historia";
+        $lista .= "Segurança da Informação <br>";
     }
 }
 
@@ -51,7 +51,6 @@ foreach ($work as $item) {
 <body>
     <div class="container">
         <div class="row">
-            <!-- Início do seu código PHP aqui -->
             <div class="col-4 mt-3">
                 <div class="card">
                     <div class="card-header">
@@ -59,12 +58,12 @@ foreach ($work as $item) {
                     </div>
                     <div class="card-body">
                         <h4><?= $nome ?></h4>
+                        <h4>Email: <?= $email ?></h4>
+                        <h4>Tipo: <?= $tipo ?></h4>
+                        <h4>Tamanho: <?= $tamanho?></h4>
                         <ul>
-                            <li>Email: <?= $email ?></li>
-                            <li>Tipo: <?= $tipo ?></li>
-                            <li>Tamanho: <?= $tamanho ?></li>
-                            <li>interesses: <br>
-                                <?= $lista ?> </li>
+                            <li>Interesses: <br>
+                                <?=  $lista ?> </li>
                         </ul>
 
                     </div>
@@ -73,9 +72,6 @@ foreach ($work as $item) {
                     </div>
                 </div>
             </div>
-
-
-            <!-- Final do seu código PHP aqui -->
         </div>
     </div>
     <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>

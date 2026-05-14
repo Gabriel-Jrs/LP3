@@ -54,23 +54,15 @@
             </form>
             <div class="col-md-4 col-sm-12">
                 <h3>Gerador de Tabuada Dinâmica (Método GET)</h3>
-                <form action="atv2.php" method="GET">
-                    <div class="mb-3">
-                        <label for="campoCons" class="form-label">Consumo Por Mês: (em kWh)</label>
-                        <input type="select" class="form-control" id="campoCons" name="numberCons">
-                    </div>
-                    <div class="mb-3">
-
-                        <select class="form-select form-select-sm" aria-label="escolha Tipo edificio" name="edificio">
-                            <option selected>Tipo de Local</option>
-                            <option value="res">Residencial</option>
-                            <option value="com">Comercial</option>
-                            <option value="ind">Industrial</option>
-                        </select>
-                    </div>
-                    <button type="submit" class="btn btn-success">Enviar</button>
-                    <button type="reset" class="btn btn-warning">Limpar Dados</button>
-                </form>
+                <form action="atv2.php" method="GET" class="col-4">
+                <p>Informe o número:</p>
+                <div class="mb-3">
+                    <label for="txtNumero" class="form-label">Número:</label>
+                    <input type="text" class="form-control" id="txtNumero" name="campoNumero">
+                </div>
+                <button type="submit" class="btn btn-success">Enviar</button>
+                <button type="reset" class="btn btn-warning">Limpar campos</button>
+            </form>
 
             </div>
         </div>

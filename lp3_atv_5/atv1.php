@@ -1,28 +1,52 @@
 <?php
 $cliente = $_POST['cliente'];
-$add = $_POST['adicionais'];
+$add = $_POST['adicionais'] ?? [];
 $texto = "";
 
 $total = 20;
 
-for ($i = 0; $i < count($add); $i++) {
-    if ($add[$i] == 'bacon') {
-        $total = $total  + 3;
-        $texto .= 'Bacon(3)<br>';
+    for ($i = 0; $i < count($add); $i++) {
+        if ($add[$i] == 'bacon') {
+            $total = $total  + 3;
+            $texto .= 'Bacon(3)<br>';
+        }
+        if ($add[$i] == 'cheddar') {
+            $total = $total  + 2.5;
+            $texto .= 'Cheddar(2,5)<br>';
+        }
+        if ($add[$i] == 'cebola') {
+            $total = $total  + 2;
+            $texto .= 'Cebola(2)<br>';
+        }
+        if ($add[$i] == 'hamburguer') {
+            $total = $total  + 5;
+            $texto .= 'Hambúrguer(5)<br>';
+        }
     }
-    if ($add[$i] == 'cheddar') {
-        $total = $total  + 2.5;
-        $texto .= 'Cheddar(2,5)<br>';
-    }
-    if ($add[$i] == 'cebola') {
-        $total = $total  + 2;
-        $texto .= 'Cebola(2)<br>';
-    }
-    if ($add[$i] == 'hamburguer') {
-        $total = $total  + 5;
-        $texto .= 'Hambúrguer(5)<br>';
-    }
+
+
+/* maneira corigida: 
+foreach($add as $item){
+
+if($item == "bacon"){
+$total += 3;
 }
+if($item == "cheddar"){
+$total += 2.5;
+}
+if($item == "cebola"){
+$total += 2;
+}
+if($item == "hamburguer"){
+$total += 5;
+}
+
+}
+
+
+
+*/
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -43,9 +67,10 @@ for ($i = 0; $i < count($add); $i++) {
                     <h5 class="card-title">Resultado</h5>
                     <div class="card" style="width: 18rem;">
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><?php echo "senhor $cliente, confira seu pedido: <br>";?> </li>
-                            <li class="list-group-item"><?php echo "$texto <br>";?></li>
-                            <li class="list-group-item"><?php echo "Você deve pagar R$ $total <br>";?></li>
+                            <li class="list-group-item"><?php echo "Senhor $cliente, confira seu pedido: <br>"; ?> </li>
+                            <li class="list-group-item"><?php echo "$texto <br>"; ?></li>
+                            <li class="list-group-item"><?php echo "Você deve pagar R$ $total <br>"; ?></li>
+                            <a class="btn btn-primary" href="index.php" role="button">Voltar</a>
                         </ul>
                     </div>
                 </div>

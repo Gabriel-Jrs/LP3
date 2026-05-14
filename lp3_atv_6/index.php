@@ -12,7 +12,7 @@
 <body>
     <div class="container">
         <div class="row">
-            <form action="respQ1.php" method="POST" class="col-4">
+            <form action="respQ1.php" method="POST" class="col-6">
                 <h2>Questão 1</h2>
                 <h4>Cadastro para Maratona de Programação</h4>
                 <div class="mb-3">
@@ -88,21 +88,18 @@
             </form>
             <div class="col-md-4 col-sm-12">
                 <h2>Questão 2</h2>
-                <h3>Buscar por personalidaes Historicas(Método GET)</h3>
-                <form action="respQ2.php" method="GET" class="col-4">
-                <p>Pesquise Por uma persolalidade</p>
+                <h3>Sistema de Consulta de Linguagens de Programação</h3>
+                <form action="respQ2.php" method="GET" class="col-6">
+                <p>Pesquise uma Linguagem de Programação</p>
                 <div class="mb-3">
-                    <label for="txtNumero" class="form-label">pesquise:</label>
-                    <input type="text" class="form-control" id="txtNumero" name="pessoa[]">
+                    <label for="txtNumero" class="form-label">Pesquise:</label>
+                    <input type="text" class="form-control" id="txtNumero" name="linguagem[]">
                 </div>
                 <button type="submit" class="btn btn-success">Pesquisar</button>
                 <button type="reset" class="btn btn-warning">Limpar</button>
             </form>
 
 
-
-
-            <!-- Final do seu código PHP aqui -->
         </div>
     </div>
     <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
