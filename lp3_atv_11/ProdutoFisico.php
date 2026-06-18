@@ -1,8 +1,9 @@
 <?php
-    class ProdutoDigital extends Produto{
+require_once "Produto.php";
+    class ProdutoFisico extends Produto{
         private float $peso;
         private string $dimensoesCxLxA;
-        private string $custoFreteFixo;
+        private float $custoFreteFixo;
         private int $trasportotadoraParceira;
         
 
@@ -12,11 +13,11 @@
     }
     public function getDimensoesCxLxA(): string
     {
-        return $this->deminsoes;
+        return $this->dimensoesCxLxA;
     }
     public function getCustoFreteFixo(): string
     {
-        return $this->descricao;
+        return $this->custoFreteFixo;
     }
     public function getTrasportotadoraParceira(): string
     {
@@ -25,7 +26,7 @@
     public function calcularPrecoVenda () : float {
         return $this->precoBase += $this->custoFreteFixo +($this->precoBase * 0.05);
     }
-    public  function verificarDisponipilidade() : bool{
+    public function verificarDisponibilade(): bool{
         if($this->qtdeEstoque > 0 && $this->isAtivo== true){
             return true;
         }
@@ -34,22 +35,23 @@
         }
     }
     public function calcularVolumeCubico(): float{
-        $vetorDimensoes = explode('x', strtolower($dimensoesCxLxA))
+        $vetorDimensoes = explode('x', strtolower($this->dimensoesCxLxA));
 
         $comprimento = (float) trim($vetorDimensoes[0]);
         $largura = (float) trim($vetorDimensoes[1]);
         $altura = (float) trim($vetorDimensoes[2]);
 
-        return $comprimento * $largura * altura;
+        return $comprimento * $largura * $altura;
 
     }
-    public function estimarPrazoEntrega(string cepDestino): int{
-        
+    public function estimarPrazoEntrega(string $stringcepDestino): int{
+        if($stringcepDestino == '00000000000'){
+            return rand (3,7);
+            
+        }
+        else{
+            return rand(8,17);
+        }
     }
-    
-    
-
-        
-
         
     }

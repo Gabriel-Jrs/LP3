@@ -4,9 +4,9 @@ abstract class Produto
     private int $codigo;
     private string $nome;
     private string $descricao;
-    private float $precoBase;
-    private int $qtdeEstoque;
-    private bool $isAtivo;
+    protected float $precoBase;
+    protected int $qtdeEstoque;
+    protected bool $isAtivo;
 
     public function getCodigo(): int
     {
@@ -52,7 +52,7 @@ abstract class Produto
             $this->isAtivo = false;
         }
     }
-    public function aplicarDesconto($percentual)
+    public function aplicarDesconto(float $percentual)
     {
         if ($percentual < 0.9 && $percentual > 0) {
             $this->precoBase *= $percentual;
@@ -60,10 +60,8 @@ abstract class Produto
             echo 'Desconto nao aplicado';
         }
     }
-    public abstract function calcularPrecoVenda(){
-
-    }
-    public abstract function verificarDisponibilade(){
+    public abstract function calcularPrecoVenda(): float;
+    public abstract function verificarDisponibilade(): bool;
         
-    }
+    
 }
